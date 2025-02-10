@@ -10,7 +10,7 @@ export const Stepper = defineStepper(
   { id: "step-3", title: "Last" }
 );
 
-export function StepperProvider({children}: StepperComponent.ProviderProps) {
+export function StepperProvider({children}: {children: React.ReactNode}) {
   const pathname = usePathname()
 
   const step = pathname.replace("/","") as Step
@@ -96,13 +96,4 @@ function StepperNavigation() {
 }
 
 export type Step = typeof Stepper.steps[number]["id"]
-
-namespace StepperComponent {
-  export type ProviderProps = {
-    children: React.ReactNode
-  }
-}
-
-
-
   
