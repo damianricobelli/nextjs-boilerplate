@@ -1,7 +1,7 @@
 "use client"
 
 import { defineStepper } from "@stepperize/react"
-import { usePathname, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 import * as React from "react";
 import { usePathnameStep } from "../hooks/use-pathname-step";
 
@@ -13,7 +13,7 @@ export const Stepper = defineStepper(
 
 export function StepperProvider({children}: {children: React.ReactNode}) {
   const step = usePathnameStep()
-  
+
   return (
     <Stepper.Scoped initialStep={step}>
       <div className="space-y-4 max-w-72">
